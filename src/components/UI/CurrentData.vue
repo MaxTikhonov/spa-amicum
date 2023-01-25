@@ -70,5 +70,7 @@ export default {
  display: flex;
  flex-direction: column;
  color: #fff;
+ font-family: Roboto sans-serif;
+ font-size: 1.5rem;
 }
 </style>
