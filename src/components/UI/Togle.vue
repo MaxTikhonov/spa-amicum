@@ -1,5 +1,7 @@
 <template>
-
+ <div class="wrapper">
+  <span>Togle</span>
+ </div>
 </template>
 
 <script>
@@ -9,6 +11,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.wrapper {
+ margin: 5rem 0rem 5rem 0rem;
+ color: #fff;
+ font-size: 2rem;
+}
 </style>

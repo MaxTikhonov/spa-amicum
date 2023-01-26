@@ -1,10 +1,10 @@
 <template>
  <div class="wrapper" v-bind="currentData">
   <div>
-   <span v-on:change="value = currentData.date">{{ currentData.date }}</span>
+   <span>{{ currentData.date }}</span>
   </div>
   <div>
-   <span v-on:change="value = currentData.time">{{ currentData.time }}</span>
+   <span>{{ currentData.time }}</span>
   </div>
  </div>
 </template>

@@ -3,15 +3,46 @@
   <div class="data-and-enter">
    <current-data></current-data>
    <div class="enter">
-    <enter-and-out>Выход</enter-and-out>
+    <enter-and-out @emited-from-enterandout="emitedFromEnterAndOut">Выход</enter-and-out>
    </div>
   </div>
+  <div class='for-togle'>
+   <togle></togle>
+  </div>
+  <user-view></user-view>
  </div>
 </template>
 
 <script>
+import UserView from './UserView.vue';
 export default {
-
+ emits: ["updatedcount"],
+ components: {
+  UserView
+ },
+ data() {
+  return {
+   isAuthOut: true
+  }
+ },
+ watch: {
+  isAuthOut(newValue, oldValue) {
+   if (newValue == false) {
+    this.emitToApp(newValue);
+   }
+   else {
+   }
+  }
+ },
+ methods: {
+  emitedFromEnterAndOut(event) {
+   console.log(event)
+   this.isAuthOut = event;
+  },
+  emitToApp(event) {
+   this.$emit('emited-from-sidebar', event)
+  }
+ }
 }
 </script>
 
@@ -34,5 +65,11 @@ export default {
  display: flex;
  align-items: center;
  justify-content: space-between;
+}
+
+.for-togle {
+ display: flex;
+ justify-content: flex-end;
+ margin-right: 1rem;
 }
 </style>
