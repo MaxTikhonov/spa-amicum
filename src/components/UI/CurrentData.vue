@@ -35,8 +35,12 @@ export default {
    this.currentData.date = c;
   },
   getCurrentTime() {
-   const time = new Date().toLocaleTimeString().slice(0, -6);
-   this.currentData.time = time;
+   let hours = new Date().getHours();
+   let minutes = new Date().getMinutes();
+   if (+minutes < 10) {
+    minutes = `0${minutes}`;
+   }
+   this.currentData.time = `${hours}:${minutes}`;
   },
   startTimer() {
    this.stopTimer()

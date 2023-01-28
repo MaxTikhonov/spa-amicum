@@ -1,0 +1,17 @@
+.cntr-wrapper {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.wrapper-column {
+ display: flex;
+ flex-direction: column;
+}
+.wrapper-row {
+ display: flex;
+ flex-direction: row;
+}
+.dark-theme {
+ color: #fff;
+ background: #ef7f1b;
+}

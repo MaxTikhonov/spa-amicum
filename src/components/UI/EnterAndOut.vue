@@ -1,6 +1,7 @@
 <template>
  <slot></slot>
- <div><image-icon @emited-auth="emitedFromImageIcon"></image-icon></div>
+ <div style="margin-left: .5rem;"><image-icon @emited-auth="emitedFromImageIcon"
+   :infoForImage="infoForImage"></image-icon></div>
 </template>
 
 <script>
@@ -10,7 +11,12 @@ export default {
  emits: ["updatedcount"],
  data() {
   return {
-   isAuthOut: true
+   isAuthOut: true,
+   infoForImage: {
+    srcOfImage: 'https://img.icons8.com/laces/64/FFFFFF/import.png',
+    width: '3.5rem',
+    height: '3.5rem'
+   }
   }
  },
  watch: {
@@ -25,12 +31,7 @@ export default {
  methods: {
   emitedFromImageIcon(event) {
    this.isAuthOut = event;
-   console.log(this.isAuthOut)
-  },
-  // emitToSIdebar(event) {
-  //  console.log(event)
-  //  this.$emit('emited-enterandout', event)
-  // }
+  }
  }
 }
 </script>

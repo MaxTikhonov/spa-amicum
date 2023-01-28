@@ -36,7 +36,6 @@ export default {
  },
  methods: {
   emitedFromEnterAndOut(event) {
-   console.log(event)
    this.isAuthOut = event;
   },
   emitToApp(event) {

@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 .wrapper {
- margin: 5rem 0rem 5rem 0rem;
+ margin: 4rem 0rem 4rem 0rem;
  color: #fff;
  font-size: 2rem;
 }
