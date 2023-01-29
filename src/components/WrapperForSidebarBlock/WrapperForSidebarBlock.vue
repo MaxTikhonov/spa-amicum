@@ -1,7 +1,7 @@
 <template>
  <div class="flex-wrap" style="justify-content: center; align-items: flex-end; margin: 0rem -1rem;">
   <div v-for="infoForImage in arrayOfImageObjects" class="dark-theme-middlebluebg white-color"
-   style="width: 15rem; height: 15rem; margin: 1rem;">
+   style="width: 15rem; height: 15rem; margin: 1rem; border-radius: .2rem;">
    <image-icon :infoForImage="infoForImage">
    </image-icon>
   </div>
