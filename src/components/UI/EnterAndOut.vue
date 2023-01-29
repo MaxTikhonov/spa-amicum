@@ -1,6 +1,6 @@
 <template>
  <slot></slot>
- <div style="margin-left: .5rem;"><image-icon @emited-auth="emitedFromImageIcon"
+ <div style="margin-left: .22rem;"><image-icon @emited-auth="emitedFromImageIcon"
    :infoForImage="infoForImage"></image-icon></div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
   return {
    isAuthOut: true,
    infoForImage: {
+    showFavicon: true,
     srcOfImage: 'https://img.icons8.com/laces/64/FFFFFF/import.png',
     width: '3.5rem',
     height: '3.5rem'

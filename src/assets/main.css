@@ -7,11 +7,29 @@
  display: flex;
  flex-direction: column;
 }
+.flex-wrap {
+ display: flex;
+ flex: wrap;
+}
 .wrapper-row {
  display: flex;
  flex-direction: row;
 }
-.dark-theme {
+.white-color {
  color: #fff;
+}
+.black-color {
+ color: #000;
+}
+.dark-theme-orangebg {
  background: #ef7f1b;
+}
+.dark-theme-middlebluebg {
+ background: #596c94;
+}
+.light-themebg {
+ background: #ffffff;
+}
+.dark-themebg {
+ background: #000000;
 }

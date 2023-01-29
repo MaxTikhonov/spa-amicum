@@ -9,16 +9,19 @@
   <div class='for-togle'>
    <togle></togle>
   </div>
-  <user-view></user-view>
+  <user-view />
+  <wrapper-for-sidebar-block />
  </div>
 </template>
 
 <script>
 import UserView from './UserView.vue';
+import WrapperForSidebarBlock from './WrapperForSidebarBlock/WrapperForSidebarBlock.vue';
 export default {
  emits: ["updatedcount"],
  components: {
-  UserView
+  UserView,
+  WrapperForSidebarBlock
  },
  data() {
   return {
@@ -69,6 +72,5 @@ export default {
 .for-togle {
  display: flex;
  justify-content: flex-end;
- margin-right: 1rem;
 }
 </style>
