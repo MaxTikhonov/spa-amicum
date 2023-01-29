@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <div class="wrapper-for-enter" v-if="isAuth == false">
-      <enter @click="emitedIsAuth" />
-    </div>
-    <div class="main" v-else="">
-      <sidebar style="width: calc(100vw/10*2.8);
+  <div class="wrapper-for-enter" v-if="isAuth == false">
+    <enter @click="emitedIsAuth" />
+  </div>
+  <div class="main" v-else="">
+    <sidebar style="width: calc(100vw/10*2.8);
       padding: 2.3rem;
       border-top-right-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;" @emited-from-sidebar="changeIsAuth" />
-      <div class="someclass">
-        <div class="wrapper-row" style="justify-content: flex-end;">
-          <image-icon :infoForImage="infoForImage"></image-icon>
-        </div>
-        <div>
-          <wrapper-for-block />
-        </div>
+    <div class="someclass">
+      <div class="wrapper-row" style="justify-content: flex-end;">
+        <image-icon :infoForImage="infoForImage"></image-icon>
+      </div>
+      <div>
+        <wrapper-for-block />
       </div>
     </div>
   </div>
@@ -45,8 +43,7 @@ export default {
         showCounter: false
       },
       isAuth: false,
-      show: false,
-      showSpinner: true
+      show: false
     }
   },
   methods: {
@@ -58,9 +55,6 @@ export default {
     },
     changeIsAuth(event) {
       this.isAuth = event;
-    },
-    switchSpinner() {
-      this.showSpinner = false;
     }
   },
   beforeMount() {

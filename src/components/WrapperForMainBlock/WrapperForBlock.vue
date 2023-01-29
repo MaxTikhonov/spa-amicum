@@ -1,9 +1,12 @@
 <template>
   <div style="margin: 6rem 0rem 0rem 12rem;">
     <div style="display: flex; flex-wrap: wrap;">
-      <div v-for="infoForImage in arrayOfImageObjects">
-        <div class="cntr-wrapper dark-theme-orangebg white-color block" style="border-radius: .4rem;"><image-icon
-            :infoForImage="infoForImage"></image-icon></div>
+      <div v-for="(infoForImage, index) in arrayOfImageObjects">
+        <div class="cntr-wrapper dark-theme-orangebg white-color block"
+          style="border-radius: .4rem; position: relative;">
+          <count-of-messages v-if="index == 1" class="count-of-messages"
+            :infoOfMessages="infoOfMessages"></count-of-messages><image-icon :infoForImage="infoForImage"></image-icon>
+        </div>
       </div>
     </div>
   </div>
@@ -55,7 +58,14 @@ export default {
           text: 'Достижения',
           background: '#ef7f1b'
         }
-      ]
+      ],
+      infoOfMessages: {
+        amountOfMessages: '2',
+        width: '2.5rem',
+        height: '2.5rem',
+        fontSize: '1.5rem',
+        background: '#16e050'
+      }
     }
   },
 }
@@ -66,5 +76,11 @@ export default {
   width: 24rem;
   height: 18rem;
   margin: 2.5rem;
+}
+
+.count-of-messages {
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
 }
 </style>

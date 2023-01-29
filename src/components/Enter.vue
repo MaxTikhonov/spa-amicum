@@ -29,5 +29,6 @@ export default {
  height: 6rem;
  background: #9db2df;
  font-size: 2rem;
+ cursor: pointer;
 }
 </style>

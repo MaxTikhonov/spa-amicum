@@ -1,9 +1,16 @@
 <template>
- <div class="circle">
-  <div class="circle__item">
-   <div class="circle__half circle__half--clipped"></div>
-  </div>
-  <div class="circle__half circle__half--fix">
+ <div class="wrapper">
+  <div class="timer">
+   <div class="timer-line">
+   </div>
+   <div class="timer-body cntr-wrapper">
+    <img v-if="infoForImage.srcOfImage" :src="infoForImage.srcOfImage" alt="" class="img">
+    <div>
+     <div v-if="infoForImage.progressOfDays" class="days">{{ infoForImage.progressOfDays }}</div>
+     <div v-if="infoForImage.wordOfDay">{{ infoForImage.wordOfDay }}</div>
+    </div>
+    <div class="timer-counter"></div>
+   </div>
   </div>
  </div>
 </template>
@@ -11,107 +18,147 @@
 <script>
 
 export default {
- name: 'auto-filling-counter'
-}
-</script>
+ name: 'auto-filling-counter',
+ props: {
+  infoForImage: {
+   type: Object,
+   required: true
+  },
+ },
+ data() {
+  return {
+   srcOfImage: '',
+   width: '',
+   height: '',
+   fontSizeForAutoFillingText: ''
+  }
+ },
+ methods: {
+  getImage() {
+   this.width = this.infoForImage.width;
+   this.height = this.infoForImage.height;
+   this.fontSizeForAutoFillingText = this.infoForImage.fontSizeForAutoFillingText;
+  }
+ },
+ mounted() {
+  this.getImage();
+ }
 
-<style>
-.circle {
+}
+</script >
+
+<style scoped>
+.wrapper {
+ min-height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.days {
+ font-size: v-bind(fontSizeForAutoFillingText);
+}
+
+.img {
+ width: v-bind(width);
+ height: v-bind(height);
+}
+
+.timer {
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
  position: relative;
- width: 6rem;
- height: 6rem;
- background: #ccc;
- border-radius: 100%;
 }
 
-.circle__item {
+.timer-line {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 2;
+ animation: line 4s linear forwards;
+}
+
+.timer:before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
  width: 50%;
  height: 100%;
- right: 0px;
+ z-index: 3;
+ background-color: #596c94;
+ animation: mask-left 4s steps(1, end) forwards;
+}
+
+.timer:after {
+ content: '';
  position: absolute;
- overflow: hidden;
- transform-origin: left center;
-}
-
-.circle .circle__item {
- animation: anim1 6s 1;
- transform: rotate(180deg);
-}
-
-@keyframes anim1 {
- 0% {
-  transform: rotate(0deg);
- }
-
- 50% {
-  transform: rotate(0deg);
- }
-
- 50.01% {
-  transform: rotate(180deg);
- }
-
- 100% {
-  transform: rotate(180deg);
- }
-}
-
-.circle__half {
+ top: 0;
+ right: 0;
+ width: 50%;
  height: 100%;
- right: 0px;
- position: absolute;
- border: solid 10px transparent;
- border-top-color: green;
- border-left-color: green;
+ z-index: 3;
+ background-color: #16e050;
+ animation: mask-right 4s steps(1, end) forwards;
+}
+
+.timer-body {
+ width: 80px;
+ height: 80px;
  border-radius: 50%;
+ background-color: #596c94;
+ text-align: center;
+ overflow: hidden;
+ z-index: 4;
 }
 
-.circle__half--clipped {
- width: 200%;
- transform: rotate(-45deg);
+.timer-line:after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 50%;
+ height: 100%;
+ background-color: #16e050;
 }
 
-.circle .circle__half--clipped {
- transform: rotate(135deg);
- animation: anim2 3s linear 2;
-}
-
-@keyframes anim2 {
- 0% {
-  transform: rotate(-45deg);
- }
+@keyframes line {
+ 0% {}
 
  100% {
-  transform: rotate(135deg);
+  transform: rotate(360deg);
  }
 }
 
-.circle__half--fix {
- width: 100%;
- transform: rotate(135deg);
- opacity: 0;
-}
-
-.circle:hover .circle__half--fix {
- opacity: 1;
- animation: anim3 6s 1;
-}
-
-@keyframes anim3 {
+@keyframes mask-left {
  0% {
-  opacity: 0;
+  visibility: visible;
  }
 
- 49.99% {
-  opacity: 0;
- }
-
- 50% {
-  opacity: 1;
- }
-
+ 50%,
  100% {
-  opacity: 1;
+  visibility: hidden;
  }
+
+}
+
+@keyframes mask-right {
+ 0% {
+  visibility: hidden;
+ }
+
+ 50%,
+ 100% {
+  visibility: visible;
+ }
+
 }
 </style>

@@ -171,53 +171,48 @@ export default {
 @keyframes move3 {
  0% {
   opacity: 1;
+  background: #1c1c1c;
  }
 
- 15% {
+ 20% {
   background: #1c1c1c;
  }
 
  30% {
-  background: #1c1c1c;
+  background: #292929;
+ }
 
+ 40% {
+  background: #323232;
  }
 
  50% {
-  background: #454545;
+  background: #393939;
  }
 
- 65% {
-  background: #555555;
+ 60% {
+  background: #494949;
  }
 
  70% {
-  background: #666666;
- }
-
- 75% {
-  background: #8e8e8e;
+  background: #5a5a5a;
  }
 
  80% {
-  background: #9f9f9f;
- }
-
- 85% {
-  background: #b5b5b5;
+  background: #6b6b6b;
  }
 
  90% {
-  background: #c8c8c8;
+  background: #aaaaaa;
  }
 
  95% {
-  background: #ededed;
-
+  background: #ffffff;
  }
 
  99.9% {
   transform: translate(-3.8rem, 0);
-  background: #FFFFFF;
+  background: #ffffff;
   opacity: 1;
  }
 

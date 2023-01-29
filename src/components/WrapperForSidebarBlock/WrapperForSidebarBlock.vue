@@ -1,7 +1,7 @@
 <template>
- <div class="flex-wrap" style="justify-content: center; margin: 0rem -1rem;">
+ <div class="flex-wrap" style="justify-content: center; align-items: flex-end; margin: 0rem -1rem;">
   <div v-for="infoForImage in arrayOfImageObjects" class="dark-theme-middlebluebg white-color"
-   style="width: 15rem; margin: 1rem;">
+   style="width: 15rem; height: 15rem; margin: 1rem;">
    <image-icon :infoForImage="infoForImage">
    </image-icon>
   </div>
@@ -15,27 +15,56 @@ export default {
   return {
    arrayOfImageObjects: [
     {
-     showFavicon: true,
-     srcOfImage: 'https://img.icons8.com/external-solid-design-circle/64/FFFFFF/external-Hammer-carpenter-solid-design-circle.png',
-     width: '3rem',
-     height: '3rem',
+     showFavicon: false,
+     srcOfImage: 'https://img.icons8.com/ios/50/FFFFFF/test-results.png',
+     width: '2.8rem',
+     height: '2.8rem',
      fontSize: '1.3rem',
-     margin: '1rem 0rem 0rem 0rem',
+     margin: '',
      text: 'Инструктаж',
      showCounter: true,
-     progressOfDays: '12'
+     progressOfDays: '',
+     heightOfWrapper: '13rem'
     },
     {
-     showFavicon: true,
-     srcOfImage: 'https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-email-user-interface-smashingstocks-glyph-smashing-stocks.png',
-     width: '3rem',
-     height: '3rem',
+     showFavicon: false,
+     srcOfImage: 'https://img.icons8.com/external-linector-lineal-linector/64/FFFFFF/external-exam-university-linector-lineal-linector.png',
+     width: '2.8rem',
+     height: '2.8rem',
      fontSize: '1.3rem',
-     margin: '1rem 0rem 0rem 0rem',
+     margin: '',
      text: 'Предсменный экзаменатор',
      showCounter: true,
-     progressOfDays: '3'
-    }
+     progressOfDays: '',
+     heightOfWrapper: '13rem'
+    },
+    {
+     showFavicon: false,
+     srcOfImage: '',
+     width: '2rem',
+     height: '2rem',
+     fontSize: '1.3rem',
+     margin: '',
+     text: 'Тестов выполнено',
+     showCounter: true,
+     progressOfDays: '12',
+     fontSizeForAutoFillingText: '3rem',
+     heightOfWrapper: '13rem'
+    },
+    {
+     showFavicon: false,
+     srcOfImage: '',
+     width: '2rem',
+     height: '2rem',
+     fontSize: '1.3rem',
+     margin: '',
+     text: 'Аттестация через',
+     showCounter: true,
+     progressOfDays: '3',
+     wordOfDay: 'дня',
+     fontSizeForAutoFillingText: '2rem',
+     heightOfWrapper: '13rem'
+    },
    ]
   }
  }

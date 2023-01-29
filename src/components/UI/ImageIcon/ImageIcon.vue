@@ -1,9 +1,9 @@
 <template>
- <div class="wrapper-column" style="align-items: center;" @click="exportEventOfOuting">
-  <div v-if="text">{{ text }}</div>
+ <div class="wrapper-column" style="align-items: center; justify-content: space-between;" @click="exportEventOfOuting">
+  <div v-if="text" style="margin: 1rem; text-align: center;" class="text">{{ text }}</div>
   <img v-if="showFavicon" class="img" :src="src" alt="">
   <div v-if="showCounter">
-   <auto-filling-counter>
+   <auto-filling-counter :infoForImage="infoForImage">
    </auto-filling-counter>
   </div>
  </div>
@@ -33,7 +33,9 @@ export default {
    border: '4px solid #fff',
    borderRadius: '',
    progress: '',
-   progressOfDays: ''
+   progressOfDays: '',
+   fontSizeForAutoFillingText: '',
+   heightOfWrapper: ''
   }
  },
  methods: {
@@ -42,6 +44,7 @@ export default {
    this.$emit('emited-auth', false)
   },
   getSrcOfImage() {
+   this.heightOfWrapper = this.infoForImage.heightOfWrapper;
    this.progressOfDays = this.infoForImage.progressOfDays;
    this.showCounter = this.infoForImage.showCounter;
    this.showFavicon = this.infoForImage.showFavicon;
@@ -62,7 +65,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .img {
  width: v-bind(width);
  height: v-bind(height);
@@ -72,6 +75,7 @@ export default {
 }
 
 .wrapper-column {
+ height: v-bind(heightOfWrapper);
  font-size: v-bind(fontSize);
 }
 
