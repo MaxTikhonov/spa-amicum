@@ -31,7 +31,7 @@ export default {
           fontSize: '2rem',
           margin: '1rem 0rem 0rem 0rem',
           text: 'Начать работу',
-          background: '#ef7f1b'
+          backGround: '#ef7f1b'
         },
         {
           showFavicon: true,
@@ -41,7 +41,7 @@ export default {
           fontSize: '2rem',
           margin: '1rem 0rem 0rem 0rem',
           text: 'Уведомления',
-          background: '#ef7f1b'
+          backGround: '#ef7f1b'
         },
         {
           showFavicon: true,
@@ -51,7 +51,7 @@ export default {
           fontSize: '2rem',
           margin: '1rem 0rem 0rem 0rem',
           text: 'Обучение',
-          background: '#ef7f1b'
+          backGround: '#ef7f1b'
         },
         {
           showFavicon: true,
@@ -61,7 +61,7 @@ export default {
           fontSize: '2rem',
           margin: '1rem 0rem 0rem 0rem',
           text: 'Достижения',
-          background: '#ef7f1b'
+          backGround: '#ef7f1b'
         }
       ],
       infoOfMessages: {
@@ -69,7 +69,7 @@ export default {
         width: '2.5rem',
         height: '2.5rem',
         fontSize: '1.5rem',
-        background: '#16e050'
+        backGround: '#16e050'
       }
     }
   },

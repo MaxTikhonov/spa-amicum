@@ -7,7 +7,7 @@
    </div>
   </div>
   <div class='for-togle'>
-   <togle></togle>
+   <togle />
   </div>
   <user-view />
   <wrapper-for-sidebar-block />

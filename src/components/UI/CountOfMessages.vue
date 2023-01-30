@@ -20,7 +20,7 @@ export default {
    width: '',
    height: '',
    fontSize: '',
-   background: ''
+   backGround: ''
   }
  },
  methods: {
@@ -29,7 +29,7 @@ export default {
    this.width = this.infoOfMessages.width;
    this.height = this.infoOfMessages.height;
    this.fontSize = this.infoOfMessages.fontSize;
-   this.background = this.infoOfMessages.background;
+   this.backGround = this.infoOfMessages.backGround;
   }
  },
  mounted() {
@@ -46,7 +46,7 @@ export default {
  width: v-bind(width);
  height: v-bind(height);
  font-size: v-bind(fontSize);
- background: v-bind(background);
+ background: v-bind(backGround);
  border-radius: 50%;
 }
 </style>

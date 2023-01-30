@@ -37,7 +37,8 @@ export default {
    progress: '',
    progressOfDays: '',
    fontSizeForAutoFillingText: '',
-   heightOfWrapper: ''
+   heightOfWrapper: '',
+   backGround: ''
   }
  },
  methods: {
@@ -46,6 +47,7 @@ export default {
    this.$emit('emited-auth', false)
   },
   getSrcOfImage() {
+   this.backGround = this.infoForImage.backGround;
    this.heightOfWrapper = this.infoForImage.heightOfWrapper;
    this.progressOfDays = this.infoForImage.progressOfDays;
    this.showCounter = this.infoForImage.showCounter;
