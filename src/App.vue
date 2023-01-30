@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import UserView from '@/components/UserView.vue'
-import Sidebar from '@/components/Sidebar.vue'
+import UserView from './components/UserView.vue'
+import Sidebar from './components/Sidebar.vue'
 import Enter from './components/Enter.vue'
 import WrapperForBlock from './components/WrapperForMainBlock/WrapperForBlock.vue'
 import ImageIcon from './components/UI/ImageIcon/ImageIcon.vue'

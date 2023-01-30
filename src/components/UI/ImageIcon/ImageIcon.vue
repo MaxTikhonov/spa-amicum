@@ -15,7 +15,6 @@ export default {
  components: {
   AutoFillingCounter
  },
- name: 'image-icon',
  emits: ["updatedcount"],
  props: {
   infoForImage: {

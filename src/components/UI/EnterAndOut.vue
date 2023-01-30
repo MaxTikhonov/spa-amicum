@@ -10,7 +10,6 @@ export default {
   components: {
     ImageIcon
   },
-  name: 'enter-and-out',
   emits: ["updatedcount"],
   data() {
     return {

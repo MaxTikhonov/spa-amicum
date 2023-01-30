@@ -22,7 +22,6 @@ export default {
  components: {
   ImageIcon
  },
- name: 'togle',
  data() {
   return {
    showSun: true,

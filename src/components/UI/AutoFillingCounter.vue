@@ -18,7 +18,6 @@
 <script>
 
 export default {
- name: 'auto-filling-counter',
  props: {
   infoForImage: {
    type: Object,

@@ -12,7 +12,6 @@
 <script>
 
 export default {
- name: 'current-data',
  data() {
   return {
    currentData: {

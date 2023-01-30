@@ -8,7 +8,6 @@
 <script>
 
 export default {
- name: 'count-of-messages',
  props: {
   infoOfMessages: {
    type: Object,
