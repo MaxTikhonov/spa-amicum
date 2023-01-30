@@ -3,15 +3,18 @@
   <div v-if="text" style="margin: 1rem; text-align: center;" class="text">{{ text }}</div>
   <img v-if="showFavicon" class="img" :src="src" alt="">
   <div v-if="showCounter">
-   <auto-filling-counter :infoForImage="infoForImage">
-   </auto-filling-counter>
+   <auto-filling-counter :infoForImage="infoForImage" />
   </div>
  </div>
 </template>
 
 <script>
+import AutoFillingCounter from '../AutoFillingCounter.vue';
 
 export default {
+ components: {
+  AutoFillingCounter
+ },
  name: 'image-icon',
  emits: ["updatedcount"],
  props: {
@@ -75,6 +78,8 @@ export default {
 }
 
 .wrapper-column {
+ display: flex;
+ flex-direction: column;
  height: v-bind(heightOfWrapper);
  font-size: v-bind(fontSize);
 }

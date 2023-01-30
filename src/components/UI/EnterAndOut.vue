@@ -1,12 +1,15 @@
 <template>
   <slot></slot>
-  <div style="margin-left: .22rem;"><image-icon @emited-auth="emitedFromImageIcon"
-      :infoForImage="infoForImage"></image-icon></div>
+  <div style="margin-left: .22rem;"><image-icon @emited-auth="emitedFromImageIcon" :infoForImage="infoForImage" /></div>
 </template>
 
 <script>
+import ImageIcon from './ImageIcon/ImageIcon.vue';
 
 export default {
+  components: {
+    ImageIcon
+  },
   name: 'enter-and-out',
   emits: ["updatedcount"],
   data() {
@@ -32,7 +35,6 @@ export default {
   },
   methods: {
     emitedFromImageIcon(event) {
-      console.log(event)
       this.isAuthOut = event;
     }
   }

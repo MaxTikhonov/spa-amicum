@@ -2,10 +2,10 @@
  <div class="wrapper">
   <div class="area dark-theme-middlebluebg">
    <transition name="fade" class="absolute" style="bottom: -1.35rem; left: -1.3rem; z-index: 1;">
-    <image-icon @click="switchTogle" v-if="showSun" :infoForImage="infoForImage"></image-icon>
+    <image-icon @click="switchTogle" v-if="showSun" :infoForImage="infoForImage" />
    </transition>
    <transition name="fade" class="absolute" style="top: -1.4rem; right: -1.95rem; z-index: 1;">
-    <image-icon @click="switchTogle" v-if="showMoon" :infoForImage="infoForImage2"></image-icon>
+    <image-icon @click="switchTogle" v-if="showMoon" :infoForImage="infoForImage2" />
    </transition>
    <div class="wrapper-row" style="justify-content: space-between;">
     <div class="mover light-themebg"></div>
@@ -16,8 +16,12 @@
 </template>
 
 <script>
+import ImageIcon from './ImageIcon/ImageIcon.vue';
 
 export default {
+ components: {
+  ImageIcon
+ },
  name: 'togle',
  data() {
   return {
@@ -74,6 +78,23 @@ export default {
  position: absolute;
 }
 
+.wrapper-row {
+ display: flex;
+ flex-direction: row;
+}
+
+.dark-theme-middlebluebg {
+ background: #596c94;
+}
+
+.light-themebg {
+ background: #ffffff;
+}
+
+.dark-themebg {
+ background: #000000;
+}
+
 .wrapper {
  margin: 4rem 0rem 4rem 0rem;
  color: #fff;
@@ -85,6 +106,7 @@ export default {
  height: 1.3rem;
  border-radius: 50%;
 }
+
 
 .reversemover {
  width: 1.3rem;

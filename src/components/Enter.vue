@@ -30,5 +30,6 @@ export default {
  background: #9db2df;
  font-size: 2rem;
  cursor: pointer;
+ border-radius: .5rem;
 }
 </style>

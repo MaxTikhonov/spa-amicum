@@ -28,6 +28,9 @@ export default {
    const date = new Date().toLocaleDateString().replaceAll("/", '.');
    let a = [];
    a = date.split('.');
+   let temp = a[0];
+   a[0] = a[1];
+   a[1] = temp;
    a.forEach(function (elem, index) {
     +elem < 10 ? a[index] = (`0${elem}`) : a[index] = elem;
    })

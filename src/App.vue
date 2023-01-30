@@ -9,7 +9,7 @@
       border-bottom-right-radius: 1.5rem;" @emited-from-sidebar="changeIsAuth" />
     <div class="someclass">
       <div class="wrapper-row" style="justify-content: flex-end;">
-        <image-icon :infoForImage="infoForImage"></image-icon>
+        <image-icon :infoForImage="infoForImage" />
       </div>
       <div>
         <wrapper-for-block />
@@ -24,13 +24,15 @@ import UserView from '@/components/UserView.vue'
 import Sidebar from '@/components/Sidebar.vue'
 import Enter from './components/Enter.vue'
 import WrapperForBlock from './components/WrapperForMainBlock/WrapperForBlock.vue'
+import ImageIcon from './components/UI/ImageIcon/ImageIcon.vue'
 
 export default {
   components: {
     UserView,
     Sidebar,
     Enter,
-    WrapperForBlock
+    WrapperForBlock,
+    ImageIcon
   },
   data() {
     return {
@@ -76,6 +78,11 @@ body {
   width: 100vw;
   background: #596c94;
   display: flex;
+}
+
+.wrapper-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .wrapper-for-enter {

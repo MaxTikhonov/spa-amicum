@@ -5,10 +5,10 @@
    <span class="span">{{ user.name }}</span>
    <span>{{ user.patronymic }}</span>
   </div>
-  <div>
+  <div style="margin-bottom: .5rem">
    <span>{{ user.dateOfBirth }}</span>
   </div>
-  <div style="font-size: 1rem;">
+  <div style="font-size: 1rem; margin-bottom: .5rem">
    <span>Таб №: </span>
    <span>{{ user.table }}</span>
   </div>

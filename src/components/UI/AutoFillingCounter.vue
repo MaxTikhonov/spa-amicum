@@ -55,6 +55,11 @@ export default {
  align-items: center;
 }
 
+.cntr-wrapper {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
 
 .days {
  font-size: v-bind(fontSizeForAutoFillingText);

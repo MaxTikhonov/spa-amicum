@@ -4,8 +4,8 @@
       <div v-for="(infoForImage, index) in arrayOfImageObjects">
         <div class="cntr-wrapper dark-theme-orangebg white-color block"
           style="border-radius: .4rem; position: relative;">
-          <count-of-messages v-if="index == 1" class="count-of-messages"
-            :infoOfMessages="infoOfMessages"></count-of-messages><image-icon :infoForImage="infoForImage"></image-icon>
+          <count-of-messages v-if="index == 1" class="count-of-messages" :infoOfMessages="infoOfMessages" /><image-icon
+            :infoForImage="infoForImage" />
         </div>
       </div>
     </div>
@@ -13,8 +13,13 @@
 </template>
 
 <script>
-
+import CountOfMessages from '../UI/CountOfMessages.vue';
+import ImageIcon from '../UI/ImageIcon/ImageIcon.vue';
 export default {
+  components: {
+    CountOfMessages,
+    ImageIcon
+  },
   data() {
     return {
       arrayOfImageObjects: [
@@ -78,9 +83,23 @@ export default {
   margin: 2.5rem;
 }
 
+.cntr-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .count-of-messages {
   position: absolute;
   top: -1.2rem;
   right: -1.2rem;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.dark-theme-orangebg {
+  background: #ef7f1b;
 }
 </style>

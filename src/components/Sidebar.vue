@@ -1,9 +1,9 @@
 <template>
  <div class="wrapper">
   <div class="data-and-enter">
-   <current-data></current-data>
+   <current-data />
    <div class="enter">
-    <enter-and-out @emited-from-enterandout="emitedFromEnterAndOut">Выход</enter-and-out>
+    <enter-and-out @emited-from-enterandout="emitedFromEnterAndOut">Выход </enter-and-out>
    </div>
   </div>
   <div class='for-togle'>
@@ -15,13 +15,19 @@
 </template>
 
 <script>
+import Togle from './UI/Togle.vue';
+import EnterAndOut from './UI/EnterAndOut.vue';
+import CurrentData from './UI/CurrentData.vue';
 import UserView from './UserView.vue';
 import WrapperForSidebarBlock from './WrapperForSidebarBlock/WrapperForSidebarBlock.vue';
 export default {
  emits: ["updatedcount"],
  components: {
   UserView,
-  WrapperForSidebarBlock
+  WrapperForSidebarBlock,
+  CurrentData,
+  EnterAndOut,
+  Togle
  },
  data() {
   return {

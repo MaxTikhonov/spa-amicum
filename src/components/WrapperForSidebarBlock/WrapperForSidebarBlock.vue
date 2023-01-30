@@ -2,15 +2,18 @@
  <div class="flex-wrap" style="justify-content: center; align-items: flex-end; margin: 0rem -1rem;">
   <div v-for="infoForImage in arrayOfImageObjects" class="dark-theme-middlebluebg white-color"
    style="width: 15rem; height: 15rem; margin: 1rem; border-radius: .2rem;">
-   <image-icon :infoForImage="infoForImage">
-   </image-icon>
+   <image-icon :infoForImage="infoForImage" />
+
   </div>
  </div>
 </template>
 
 <script>
-
+import ImageIcon from '../UI/ImageIcon/ImageIcon.vue';
 export default {
+ components: {
+  ImageIcon
+ },
  data() {
   return {
    arrayOfImageObjects: [
@@ -24,7 +27,7 @@ export default {
      text: 'Инструктаж',
      showCounter: true,
      progressOfDays: '',
-     heightOfWrapper: '13rem'
+     heightOfWrapper: '12rem'
     },
     {
      showFavicon: false,
@@ -36,7 +39,7 @@ export default {
      text: 'Предсменный экзаменатор',
      showCounter: true,
      progressOfDays: '',
-     heightOfWrapper: '13rem'
+     heightOfWrapper: '12rem'
     },
     {
      showFavicon: false,
@@ -49,7 +52,7 @@ export default {
      showCounter: true,
      progressOfDays: '12',
      fontSizeForAutoFillingText: '3rem',
-     heightOfWrapper: '13rem'
+     heightOfWrapper: '12rem'
     },
     {
      showFavicon: false,
@@ -63,7 +66,7 @@ export default {
      progressOfDays: '3',
      wordOfDay: 'дня',
      fontSizeForAutoFillingText: '2rem',
-     heightOfWrapper: '13rem'
+     heightOfWrapper: '12rem'
     },
    ]
   }
@@ -72,5 +75,16 @@ export default {
 </script>
 
 <style scoped>
+.flex-wrap {
+ display: flex;
+ flex-wrap: wrap;
+}
 
+.dark-theme-middlebluebg {
+ background: #596c94;
+}
+
+.white-color {
+ color: #fff;
+}
 </style>
